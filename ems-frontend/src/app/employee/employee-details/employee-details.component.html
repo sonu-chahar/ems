@@ -1,0 +1,36 @@
+<h3> View Employee Details</h3>
+<div>
+    <div>
+        <label> <b> Name: </b></label> {{employee?.name}}
+    </div>
+    <div>
+        <label> <b> Employee Id: </b></label> {{employee?.id}}
+    </div>
+    <div>
+        <label> <b> Email Id: </b></label> {{employee?.emailId}}
+    </div>
+    <div>
+        <label> <b> Phone Number: </b></label> {{employee?.phoneNumber}}
+    </div>
+    <div>
+        <label> <b> Date of Birth: </b></label> {{employee?.dateOfBirth}}
+    </div>
+    <div>
+        <label> <b> Date of joining: </b></label> {{employee?.dateOfJoining}}
+    </div>
+    <div>
+        <label> <b> Department: </b></label> {{employee?.departmentId}}
+    </div>
+    <div>
+        <label> <b> User Type/ Designation: </b></label> {{employee?.userType}}
+    </div>
+    <div>
+        <label> <b> Reporting User: </b></label> {{employee?.reportingUser?.name}}
+    </div>
+    <!-- <div>
+        <label> <b> Subordinate User: </b></label> 
+        <div *ngFor = "let user of employee?.subordinatesUsers">{{user?.name}}
+        </div>
+    </div> -->
+  
+</div>
