@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "0ce260be-6bf4-4fef-b346-559cd5f91082",
+		"name": "EMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12025809"
+	},
+	"item": [
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Chahar\",\n    \"departmentId\":1,\n    \"dateOfJoining\":\"2017-12-27\",\n    \"dateOfBirth\":\"2017-12-27\",\n    \"emailId\":\"s.chahar@chahar.india.comcomcom\",\n    \"userType\":\"DEVELOPER\",\n    \"phoneNumber\":\"7428058043\",\n    \"reportingUserId\":28,\n    \"subordinatesUserIds\":[25,26]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/v1/employees/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"employeeId\":31,\n    \"name\":\"Sonu\",\n    \"departmentId\":1,\n    \"dateOfJoining\":\"2018-12-27\",\n    \"dateOfBirth\":\"2017-12-27\",\n    \"emailId\":\"s.chahar@chahar.gov.commmxxxxxxxzzzzaaa\",\n    \"userType\":\"DEVELOPER\",\n    \"phoneNumber\":\"7428058043\",\n    \"reportingUserId\":20\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/v1/employees/31",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"31"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Sonu\",\n    \"departmentId\":1,\n    \"dateOfJoining\":\"2017-12-27\",\n    \"dateOfBirth\":\"2017-12-27\",\n    \"emailId\":\"s.chahar@chahar.commmmmmmmmmmmmmmm\",\n    \"userType\":\"DEVELOPER\",\n    \"phoneNumber\":\"7428058043\",\n    \"reportingUserId\":6,\n    \"subordinatesUserIds\":[]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/v1/employees/28",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"28"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindAllEmployee",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Sonu\",\n    \"departmentId\":1,\n    \"dateOfJoining\":\"2017-12-27\",\n    \"dateOfBirth\":\"2017-12-27\",\n    \"emailId\":\"s.chahar@chahar.commmmmmmmmmmmmmmm\",\n    \"userType\":\"DEVELOPER\",\n    \"phoneNumber\":\"7428058043\",\n    \"reportingUserId\":6,\n    \"subordinatesUserIds\":[]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/v1/employees?userType=DEVELOPER",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees"
+					],
+					"query": [
+						{
+							"key": "userType",
+							"value": "DEVELOPER"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindAllDepartment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Sonu\",\n    \"departmentId\":1,\n    \"dateOfJoining\":\"2017-12-27\",\n    \"dateOfBirth\":\"2017-12-27\",\n    \"emailId\":\"s.chahar@chahar.commmmmmmmmmmmmmmm\",\n    \"userType\":\"DEVELOPER\",\n    \"phoneNumber\":\"7428058043\",\n    \"reportingUserId\":6,\n    \"subordinatesUserIds\":[]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/v1/departments",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"Sonu\",\n    \"departmentId\":1,\n    \"dateOfJoining\":\"2017-12-27\",\n    \"dateOfBirth\":\"2017-12-27\",\n    \"emailId\":\"s.chahar@chahar.commmmmmmmmmmmmmmm\",\n    \"userType\":\"DEVELOPER\",\n    \"phoneNumber\":\"7428058043\",\n    \"reportingUserId\":6,\n    \"subordinatesUserIds\":[]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/api/v1/employees/20",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"employees",
+						"20"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
