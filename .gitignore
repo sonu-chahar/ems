@@ -1,0 +1,13 @@
+**/target/
+.project
+.settings
+
+**/node_modules/
+
+**/.idea
+
+**/.vscode/
+**/.angular/
+**/*.log
+**/package-lock.json
+**/.gitkeep

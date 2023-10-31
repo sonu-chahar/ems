@@ -22,4 +22,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     public List<Department> findAll() {
         return this.departmentRepository.findAll();
     }
+
+    @Override
+    public List<Department> saveAll(List<Department> departments) {
+        return this.departmentRepository.saveAll(departments);
+    }
 }

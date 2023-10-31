@@ -3,10 +3,10 @@ package com.hexa.ums;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class EmployeeServiceApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 

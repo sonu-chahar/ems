@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeRequest } from '../employee-request'
+import { IEmployee } from '../employee.model'
 import { EmployeeService } from '../employee.service'
 import { Router } from '@angular/router';
 
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeeListComponent implements OnInit {
 
-  employees: EmployeeRequest[] = [];
+  employees: IEmployee[] = [];
 
   constructor(private employeeService: EmployeeService,
     private router: Router) { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeRequest } from '../employee-request';
+import { IEmployee } from '../employee.model';
 import { EmployeeService } from '../employee.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DepartmentService } from '../department.service';
@@ -12,23 +12,20 @@ import { DepartmentService } from '../department.service';
 export class UpdateEmployeeComponent implements OnInit {
 
   id: number = 0;
-  employee: EmployeeRequest = {
+  employee: IEmployee = {
     id: 0,
     name: '',
     phoneNumber: '',
     emailId: '',
-    departmentId: 0,
-    userType: '',
     dateOfJoining: '',
-    dateOfBirth: '',
-    reportingUserId: 0
+    dateOfBirth: ''
   };
   departmentList :Array<{id: number, name: string}> = [];
 
   reportingUserList :Array<{id: number, name: string}>=[];
 
 
-  userTypeList = ['DEVELOPER','SENIOR_DEVELOPER'];
+  userTypeList: string[] = [];
 
   constructor(private employeeService: EmployeeService,private departmentService: DepartmentService,
     private route: ActivatedRoute,
@@ -42,12 +39,18 @@ export class UpdateEmployeeComponent implements OnInit {
     this.employeeService.getEmployeeById(this.id).subscribe(data => {
       this.employee = data;
       // let reportingUser = this.employee.reportingUserId;
-      this.employeeService.getReportigUserList(this.employee.userType).subscribe(data => {
-        this.reportingUserList = data;
-      });
+      if(this.employee.userType){
+        this.employeeService.getReportigUserList(this.employee.userType).subscribe(data => {
+          this.reportingUserList = data;
+        });
+      }
       
       this.departmentService.getDepartmentList().subscribe(data => {
         this.departmentList = data;
+      });
+
+      this.employeeService.getUserTypes().subscribe(data => {
+        this.userTypeList = data;
       });
       
     }, error => console.log(error));
@@ -64,8 +67,8 @@ export class UpdateEmployeeComponent implements OnInit {
     this.router.navigate(['/ems']);
   }
 
-  onUserTypeChange() {
-    this.employeeService.getReportigUserList(this.employee.userType).subscribe(data => {
+  onUserTypeChange(usrType:string) {
+    this.employeeService.getReportigUserList(usrType).subscribe(data => {
       this.reportingUserList = data;
     });
   }
