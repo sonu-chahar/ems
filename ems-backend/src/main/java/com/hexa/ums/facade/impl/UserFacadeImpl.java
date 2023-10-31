@@ -99,6 +99,13 @@ public class UserFacadeImpl implements UserFacade {
         return new ArrayList<>();
     }
 
+    @Override
+    public List<String> findAllUserTypes() {
+        return Arrays.stream(UserType.values())
+                .map(UserType::name)
+                .collect(Collectors.toList());
+    }
+
 
     private User handleUserAssociationForAddRequest(UserRequest userRequest) {
         User user = User.builder()

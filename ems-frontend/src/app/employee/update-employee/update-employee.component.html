@@ -94,8 +94,8 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label>UserType</label>
-                                <select [(ngModel)]="employee.userType" (change)="onUserTypeChange()"
-                                    class="form-control" id="userType" name="userType">
+                                <select [(ngModel)]="employee.userType" (change)="usrtype.value !='' && onUserTypeChange(usrtype.value)"
+                                    class="form-control" id="userType" name="userType" #usrtype="ngModel">
                                     <option>Select User Type</option>
                                     <option *ngFor="let userType of userTypeList" [value]="userType">{{userType}}
                                     </option>

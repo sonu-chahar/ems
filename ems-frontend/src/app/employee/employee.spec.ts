@@ -1,4 +1,4 @@
-import { EmployeeRequest } from './employee-request';
+import { IEmployee } from './employee.model';
 
 describe('Employee', () => {
   it('should create an instance', () => {

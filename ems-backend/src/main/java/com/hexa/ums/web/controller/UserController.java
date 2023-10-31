@@ -2,6 +2,7 @@ package com.hexa.ums.web.controller;
 
 import com.hexa.ums.dto.UserDto;
 import com.hexa.ums.facade.UserFacade;
+import com.hexa.ums.model.UserType;
 import com.hexa.ums.web.request.UserRequest;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
@@ -25,9 +26,12 @@ public class UserController {
     // get all employees
     @GetMapping("/employees")
     public ResponseEntity<List<UserDto>> getAllUsers(@RequestParam(required = false, name = "userType") String type) {
-        if (type != null && !"".equals(type.trim())) {
+
+        if (type != null && !type.trim().isEmpty()) {
+            log.info("getAllUsers request received for userType: {}",type);
             return ResponseEntity.ok(userFacade.findAvailableReportingByUserType(type));
         }
+        log.info("getAllUsers request received");
         return ResponseEntity.ok(userFacade.findAll());
     }
 
@@ -53,6 +57,11 @@ public class UserController {
     @DeleteMapping("/employees/{id}")
     public ResponseEntity<Map<String, Boolean>> deleteUser(@PathVariable Long id) {
         return ResponseEntity.ok(userFacade.deleteUser(id));
+    }
+
+    @GetMapping("/employees/types")
+    public ResponseEntity<List<String>> getAllUserTypes() {
+        return ResponseEntity.ok(userFacade.findAllUserTypes());
     }
 
 

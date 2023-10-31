@@ -8,4 +8,6 @@ public interface DepartmentService {
     Department get(Integer departmentId);
 
     List<Department> findAll();
+
+    List<Department> saveAll(List<Department> departments);
 }

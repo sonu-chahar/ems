@@ -15,6 +15,7 @@
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -45,6 +46,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<!--<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-boot-starter</artifactId>
+			<version>3.0.0</version>
+		</dependency>-->
 
 		<dependency>
 			<groupId>com.mysql</groupId>
@@ -67,7 +77,24 @@
 			<version>5.6.15.Final</version>
 		</dependency>
 	</dependencies>
+<profiles>
+	<profile>
+		<id>dev</id>
+		<activation>
+			<activeByDefault>true</activeByDefault>
+		</activation>
+		<properties>
+			<active_profile>dev</active_profile>
+		</properties>
+	</profile>
+	<profile>
+		<id>prod</id>
+		<properties>
+			<active_profile>prod</active_profile>
+		</properties>
+	</profile>
 
+</profiles>
 	<build>
 		<plugins>
 			<plugin>

@@ -1,6 +1,7 @@
 package com.hexa.ums.facade;
 
 import com.hexa.ums.dto.UserDto;
+import com.hexa.ums.model.UserType;
 import com.hexa.ums.web.request.UserRequest;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface UserFacade {
     List<UserDto> findAll();
 
     List<UserDto> findAvailableReportingByUserType(String type);
+
+    List<String> findAllUserTypes();
 }

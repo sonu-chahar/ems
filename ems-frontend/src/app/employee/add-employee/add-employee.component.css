@@ -1,0 +1,12 @@
+.addEmployeeError {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    color: #d25ca1;
+}
+.error {
+    padding: 2px 5px;
+    background-color: #d25ca1;
+    color: white;
+    font-style: normal;
+}
